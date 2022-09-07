@@ -2,15 +2,22 @@
   "name": "cascadia-turbo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./index.tsx",
   "activationEvents": true,
   "scripts": {
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "clean": "rm -rf node_modules && pnpm -r exec rm -rf node_modules .next .dist .turbo"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@manypkg/cli": "^0.19.1",
     "turbo": "^1.4.4"
+  },
+  "manypkg": {
+    "ignoredRules": [
+      "INTERNAL_MISMATCH"
+    ]
   }
 }
